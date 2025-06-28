@@ -1,0 +1,168 @@
+CREATE TABLE `appointment` (
+  `appointmentId` int NOT NULL,
+  `customerId` int DEFAULT NULL,
+  `vehicleId` varchar(50) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `scheduledDate` date DEFAULT NULL,
+  `scheduledTime` time DEFAULT NULL,
+  `outletId` int DEFAULT NULL,
+  `serviceId` int DEFAULT NULL,
+  PRIMARY KEY (`appointmentId`),
+  KEY `customerId` (`customerId`),
+  KEY `vehicleId` (`vehicleId`),
+  KEY `fk_appointment_outlet` (`outletId`),
+  KEY `fk_appointment_service` (`serviceId`),
+  CONSTRAINT `fk_appointment_service` FOREIGN KEY (`serviceId`) REFERENCES `service` (`serviceId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `customers` (
+  `customerId` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `contactNumber` int DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `registrationDate` date DEFAULT NULL,
+  PRIMARY KEY (`customerId`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `department` (
+  `departmentId` int NOT NULL,
+  `departmentName` varchar(100) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`departmentId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `employee` (
+  `employeeId` int NOT NULL,
+  `nic` int DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `roleName` varchar(100) DEFAULT NULL,
+  `phone` int DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `dateOfJoining` date DEFAULT NULL,
+  `dateOfBirth` date DEFAULT NULL,
+  `outletId` int DEFAULT NULL,
+  `departmentId` int DEFAULT NULL,
+  PRIMARY KEY (`employeeId`),
+  KEY `departmentId` (`departmentId`),
+  KEY `fk_employee_outlet` (`outletId`),
+  CONSTRAINT `fk_employee_outlet` FOREIGN KEY (`outletId`) REFERENCES `serviceoutlet` (`outletId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `invoice` (
+  `invoiceId` int NOT NULL AUTO_INCREMENT,
+  `customerId` int DEFAULT NULL,
+  `issueDate` date DEFAULT NULL,
+  `dueDate` date DEFAULT NULL,
+  `totalAmount` int DEFAULT NULL,
+  `paymentStatus` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`invoiceId`),
+  KEY `customerId` (`customerId`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `invoice_product` (
+  `productInvoiceId` int NOT NULL AUTO_INCREMENT,
+  `invoiceId` int DEFAULT NULL,
+  `productId` int DEFAULT NULL,
+  `quantity` int DEFAULT '1',
+  PRIMARY KEY (`productInvoiceId`),
+  KEY `invoiceId` (`invoiceId`),
+  KEY `productId` (`productId`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `invoice_service` (
+  `serviceInvoiceId` int NOT NULL AUTO_INCREMENT,
+  `invoiceId` int DEFAULT NULL,
+  `serviceId` int DEFAULT NULL,
+  PRIMARY KEY (`serviceInvoiceId`),
+  KEY `invoiceId` (`invoiceId`),
+  KEY `serviceId` (`serviceId`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `payment` (
+  `paymentId` int NOT NULL AUTO_INCREMENT,
+  `customerId` int DEFAULT NULL,
+  `invoiceId` int DEFAULT NULL,
+  `totalAmount` int DEFAULT NULL,
+  `paymentDate` date DEFAULT NULL,
+  `paymentMethod` varchar(50) DEFAULT NULL,
+  `paymentStatus` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`paymentId`),
+  KEY `customerId` (`customerId`),
+  KEY `invoiceId` (`invoiceId`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `product` (
+  `productId` int NOT NULL,
+  `productName` varchar(100) DEFAULT NULL,
+  `category` varchar(100) DEFAULT NULL,
+  `vehicleCompatibility` varchar(100) DEFAULT NULL,
+  `brand` varchar(100) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `unitPrice` int DEFAULT NULL,
+  `supplierId` int DEFAULT NULL,
+  `outletId` int DEFAULT NULL,
+  PRIMARY KEY (`productId`),
+  KEY `supplierId` (`supplierId`),
+  KEY `fk_product_outlet` (`outletId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `service` (
+  `serviceId` int NOT NULL,
+  `serviceName` varchar(100) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `estimatedDuration` time DEFAULT NULL,
+  `vehicleCompatibility` varchar(100) DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  PRIMARY KEY (`serviceId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `serviceoutlet` (
+  `outletId` int NOT NULL,
+  `outletName` varchar(100) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `contactNumber` int DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`outletId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `servicerecord` (
+  `recordId` int NOT NULL,
+  `appointmentId` int DEFAULT NULL,
+  `vehicleId` varchar(50) DEFAULT NULL,
+  `customerId` int DEFAULT NULL,
+  `serviceId` int DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `dateOfService` date DEFAULT NULL,
+  `totalCost` int DEFAULT NULL,
+  PRIMARY KEY (`recordId`),
+  KEY `appointmentId` (`appointmentId`),
+  KEY `vehicleId` (`vehicleId`),
+  KEY `customerId` (`customerId`),
+  KEY `serviceId` (`serviceId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `supplier` (
+  `supplierId` int NOT NULL,
+  `supplierName` varchar(100) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `contactNumber` int DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`supplierId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `vehicle` (
+  `vehicleId` int NOT NULL AUTO_INCREMENT,
+  `customerId` int DEFAULT NULL,
+  `model` varchar(100) DEFAULT NULL,
+  `year` int DEFAULT NULL,
+  `fuelType` varchar(50) DEFAULT NULL,
+  `lastServicedDate` date DEFAULT NULL,
+  `mileage` int DEFAULT NULL,
+  PRIMARY KEY (`vehicleId`),
+  KEY `customerId` (`customerId`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
