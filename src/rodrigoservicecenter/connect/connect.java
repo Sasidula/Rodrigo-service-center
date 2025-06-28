@@ -61,7 +61,6 @@ public class connect {
 
     private void createTables(Connection con) {
         String[] queries = {
-                // service table first (needed for FK)
                 """
             CREATE TABLE IF NOT EXISTS service (
               serviceId INT NOT NULL,

@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Rodrigo-service-center:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Rodrigo_service_center_jar</output-path>
+    <root id="archive" name="Rodrigo-service-center.jar">
+      <element id="module-output" name="Rodrigo-service-center" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jfreechart-1.5.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/AbsoluteLayout-RELEASE250.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/LGoodDatePicker-11.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/commons-digester-2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/itext-2.1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/swing-layout-1.0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/commons-collections4-4.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jcommon-1.0.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jcalendar-1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jasperreports-7.0.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/commons-logging-1.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

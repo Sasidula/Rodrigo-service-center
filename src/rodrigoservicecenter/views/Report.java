@@ -64,8 +64,6 @@ public class Report extends javax.swing.JInternalFrame {
         customer_panal = new javax.swing.JPanel();
         appointment_table = new javax.swing.JPanel();
         income_panal = new javax.swing.JPanel();
-        print_bt = new javax.swing.JButton();
-        refresh_bt = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1240, 700));
@@ -83,34 +81,8 @@ public class Report extends javax.swing.JInternalFrame {
 
         getContentPane().add(tab_panal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 1110, 540));
 
-        print_bt.setForeground(new java.awt.Color(102, 102, 102));
-        print_bt.setText("Print");
-        print_bt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                print_btActionPerformed(evt);
-            }
-        });
-        getContentPane().add(print_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 30, 130, 30));
-
-        refresh_bt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rodrigoservicecenter/resources/refresh-3104 (1).png"))); // NOI18N
-        refresh_bt.setForeground(new java.awt.Color(102, 102, 102));
-        refresh_bt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refresh_btActionPerformed(evt);
-            }
-        });
-        getContentPane().add(refresh_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, 30, 30));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void print_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_btActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_print_btActionPerformed
-
-    private void refresh_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresh_btActionPerformed
-        setReports();
-    }//GEN-LAST:event_refresh_btActionPerformed
 
     public void loadReportToPanel(JPanel targetPanel, String reportPath, Connection con) {
         try {
@@ -137,8 +109,6 @@ public class Report extends javax.swing.JInternalFrame {
     private javax.swing.JPanel customer_panal;
     private javax.swing.JPanel income_panal;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JButton print_bt;
-    private javax.swing.JButton refresh_bt;
     private javax.swing.JTabbedPane tab_panal;
     private javax.swing.JPanel visual_panal;
     // End of variables declaration//GEN-END:variables

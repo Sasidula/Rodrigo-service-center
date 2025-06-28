@@ -4,6 +4,7 @@ package rodrigoservicecenter.views;
 import rodrigoservicecenter.controller.EmployeeController;
 import rodrigoservicecenter.model.entity.Employee;
 
+
 public class LoginForm extends javax.swing.JFrame {
 
     EmployeeController employeeController = new EmployeeController();
@@ -13,8 +14,8 @@ public class LoginForm extends javax.swing.JFrame {
         setUndecorated(true); // Remove title bar
         initComponents();
 
-        jPasswordField1.setText("emp123");
-        MyTextField.setText("Mike Smith");
+        jPasswordField1.setText("");
+        MyTextField.setText("");
 
     }
 
@@ -196,7 +197,9 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void MyTextFieldActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {}
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {
+        System.exit(0);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField MyTextField;
