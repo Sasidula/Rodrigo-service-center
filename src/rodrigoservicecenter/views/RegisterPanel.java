@@ -66,6 +66,7 @@ public class RegisterPanel extends javax.swing.JInternalFrame {
             }
         });
 
+        username.setText("New Customers");
 
         clearForm();
         yearValue();
@@ -80,7 +81,6 @@ public class RegisterPanel extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
@@ -135,9 +135,6 @@ public class RegisterPanel extends javax.swing.JInternalFrame {
         jLabel13.setForeground(new java.awt.Color(0, 102, 204));
         jLabel13.setText("New Customer");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
-
-        jLabel15.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. ");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, -1, -1));
 
         name.setText("Enter name");
         name.setActionCommand("null");
@@ -514,7 +511,6 @@ public class RegisterPanel extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;

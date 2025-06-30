@@ -183,7 +183,7 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rodrigoservicecenter/resources/6.png"))); // NOI18N
         jLabel1.setText("Customer");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 330, 170));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 340, 180));
 
         refresh_bt.setForeground(new java.awt.Color(102, 102, 102));
         refresh_bt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rodrigoservicecenter/resources/refresh-3104 (1).png"))); // NOI18N
@@ -253,7 +253,7 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(customers);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 730, 600));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 730, 550));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -330,7 +330,7 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
         jSeparator6.setForeground(new java.awt.Color(0, 51, 153));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 360, 10));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 360, 10));
 
         mobile_number.setText("Enter name");
         mobile_number.setActionCommand("null");
@@ -360,7 +360,7 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
                 cus_update_btActionPerformed(evt);
             }
         });
-        jPanel1.add(cus_update_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 360, 40));
+        jPanel1.add(cus_update_bt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 360, 40));
 
         password.setText("Enter name");
         password.setActionCommand("null");
@@ -467,7 +467,7 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Vehicle", jPanel2);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 400, 510));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, 400, 510));
 
         search_bt1.setForeground(new java.awt.Color(102, 102, 102));
         search_bt1.setText("Search");
@@ -495,7 +495,7 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
 
     private void vehicleModelActionPerformed(java.awt.event.ActionEvent evt) {}
 
-    private void search_bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_bt1ActionPerformed
+    private void search_bt1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         if (search_customer.getText().isEmpty()) {
             refreshTable();
         } else {
@@ -503,11 +503,11 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
         }
     }
 
-    private void refresh_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refresh_btActionPerformed
+    private void refresh_btActionPerformed(java.awt.event.ActionEvent evt) {                                           
         refreshTable();
     }
 
-    private void cus_update_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cus_update_btActionPerformed
+    private void cus_update_btActionPerformed(java.awt.event.ActionEvent evt) {                                              
         Customer selectedCustomer = getSelectedCustomer();
 
         if (selectedCustomer != null) {
@@ -537,7 +537,7 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
         }
     }
 
-    private void veh_update_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veh_update_btActionPerformed
+    private void veh_update_btActionPerformed(java.awt.event.ActionEvent evt) {                                              
         Customer selectedCustomer = getSelectedCustomer();
 
         if (selectedCustomer != null) {

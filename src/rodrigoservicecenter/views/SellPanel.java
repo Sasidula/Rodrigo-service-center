@@ -364,9 +364,7 @@ public class SellPanel extends javax.swing.JInternalFrame {
         for (selectedItem selectedItem : selectedProducts) {
             totalAmount += selectedItem.getProduct().getUnitPrice() * selectedItem.getQuantity();
         }
-        total_price.setText("Total Amount : " + String.valueOf(totalAmount));
-
-        System.out.println("Total Amount : " + totalAmount);
+        total_price.setText(String.valueOf(totalAmount));
     }
 
 

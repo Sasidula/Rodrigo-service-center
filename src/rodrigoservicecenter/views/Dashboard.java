@@ -69,7 +69,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         username = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -395,13 +394,10 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 153, 0));
         jLabel14.setText("Welcome to Rodrigo Service Center");
 
-        jLabel15.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. ");
-
         mainpanel.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mainpanel.setLayer(jLabel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mainpanel.setLayer(username, javax.swing.JLayeredPane.DEFAULT_LAYER);
         mainpanel.setLayer(jLabel14, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        mainpanel.setLayer(jLabel15, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout mainpanelLayout = new javax.swing.GroupLayout(mainpanel);
         mainpanel.setLayout(mainpanelLayout);
@@ -411,9 +407,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(mainpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainpanelLayout.createSequentialGroup()
                         .addGap(401, 401, 401)
-                        .addGroup(mainpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainpanelLayout.createSequentialGroup()
                         .addGap(356, 356, 356)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -435,9 +429,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(username))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
 
         getContentPane().add(mainpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 1250, 730));
@@ -689,7 +681,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

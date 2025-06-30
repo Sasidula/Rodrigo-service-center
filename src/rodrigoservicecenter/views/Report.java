@@ -32,15 +32,19 @@ public class Report extends javax.swing.JInternalFrame {
         connect db = new connect();
         Connection con = db.createConnection();
 
-        //String visualReport = "";
+        //String visualReport = "rodrigoservicecenter/views/reports/Chart.jasper";;
         String customerReport = "rodrigoservicecenter/views/reports/Customers.jasper";
         String appoinmentReport = "rodrigoservicecenter/views/reports/Appointments.jasper";
         String incomeReport = "rodrigoservicecenter/views/reports/Income.jasper";
+        String productReport = "rodrigoservicecenter/views/reports/Product.jasper";
+        String vehicleReport = "rodrigoservicecenter/views/reports/Vehicle.jasper";
 
         //loadReportToPanel(visual_panal, visualReport, con);
         loadReportToPanel(customer_panal, customerReport, con);
-        loadReportToPanel(appointment_table, appoinmentReport, con);
+        loadReportToPanel(appointment_panal, appoinmentReport, con);
         loadReportToPanel(income_panal, incomeReport, con);
+        loadReportToPanel(product_panal,productReport,con);
+        loadReportToPanel(vehicle_panal,vehicleReport,con);
 
         ChartGenerator chartGenerator = new ChartGenerator();
         JScrollPane chartPanel = chartGenerator.getPanel(con);
@@ -62,8 +66,10 @@ public class Report extends javax.swing.JInternalFrame {
         tab_panal = new javax.swing.JTabbedPane();
         visual_panal = new javax.swing.JPanel();
         customer_panal = new javax.swing.JPanel();
-        appointment_table = new javax.swing.JPanel();
+        appointment_panal = new javax.swing.JPanel();
         income_panal = new javax.swing.JPanel();
+        product_panal = new javax.swing.JPanel();
+        vehicle_panal = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1240, 700));
@@ -76,8 +82,10 @@ public class Report extends javax.swing.JInternalFrame {
 
         tab_panal.addTab("Visual Report", visual_panal);
         tab_panal.addTab("Customer Report", customer_panal);
-        tab_panal.addTab("Appointment Report", appointment_table);
+        tab_panal.addTab("Appointment Report", appointment_panal);
         tab_panal.addTab("Income Report", income_panal);
+        tab_panal.addTab("Product Report", product_panal);
+        tab_panal.addTab("Vehicle Report", vehicle_panal);
 
         getContentPane().add(tab_panal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 1110, 540));
 
@@ -105,11 +113,13 @@ public class Report extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel appointment_table;
+    private javax.swing.JPanel appointment_panal;
     private javax.swing.JPanel customer_panal;
     private javax.swing.JPanel income_panal;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JPanel product_panal;
     private javax.swing.JTabbedPane tab_panal;
+    private javax.swing.JPanel vehicle_panal;
     private javax.swing.JPanel visual_panal;
     // End of variables declaration//GEN-END:variables
 }
