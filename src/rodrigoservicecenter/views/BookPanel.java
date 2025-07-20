@@ -320,20 +320,25 @@ public class BookPanel extends javax.swing.JInternalFrame {
 
     private void book_btActionPerformed(java.awt.event.ActionEvent evt) {
 
-        if (CreatePanalValidate()){
+        if (CreatePanalValidate()) {
 
             Customer customer = customerController.getCustomerByContactNumber(Integer.parseInt(mobile_number.getText()));
+
+            if (customer == null) {
+                JOptionPane.showMessageDialog(null, "Appointment Booking failed. Wrong phone number");
+                return;
+            }
 
             Appointment appointment = new Appointment();
             appointment.setScheduledDate(addDate(dateTimePicker.datePicker.getDate(), dateTimePicker.timePicker.getTime()));
             appointment.setScheduledTime(addTime(dateTimePicker.timePicker.getTime(), dateTimePicker.datePicker.getDate()));
-            appointment.setCustomer(customerController.getCustomerByContactNumber(Integer.parseInt(mobile_number.getText())));
             appointment.setCustomer(customer);
             appointment.setVehicle(customerController.getVehicleByCustomerId(customer.getCustomerId()));
             appointment.setService(appointmentController.getServiceById(serviceid.getSelectedIndex()));
             appointment.setOutlet(employee.getOutlet());
             appointment.setDescription(description.getText());
             appointment.setStatus("Pending");
+
             if (appointmentController.addAppointment(appointment)) {
                 JOptionPane.showMessageDialog(null, "Appointment Booked Successfully");
                 refreshTable(appointmentController.getupcomingAppointments());
@@ -341,6 +346,7 @@ public class BookPanel extends javax.swing.JInternalFrame {
             }
         }
     }
+
 
     private Time addTime(LocalTime time, LocalDate date) {
         if (time != null && date != null) {

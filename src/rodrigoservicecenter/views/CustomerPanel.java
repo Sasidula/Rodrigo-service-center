@@ -499,6 +499,8 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
         if (search_customer.getText().isEmpty()) {
             refreshTable();
         } else {
+            displayedCustomers.clear(); // clear before refill
+            model.setRowCount(0);       // reset table rows
             filterTableByName();
         }
     }
@@ -649,7 +651,12 @@ public class CustomerPanel extends javax.swing.JInternalFrame {
         customer.setAddress(address.getText());
         //customer.setNic(nic.getText());
         customer.setPassword(password.getText());
-        customer.setContactNumber(Integer.parseInt(mobile_number.getText()));
+        String contactStr = mobile_number.getText().trim();
+        if (!contactStr.isEmpty() && contactStr.matches("\\d+")) {
+            customer.setContactNumber(Integer.parseInt(contactStr));
+        } else {
+            customer.setContactNumber(0);
+        }
         return customer;
     }
 

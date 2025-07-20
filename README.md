@@ -1,4 +1,4 @@
-````markdown
+
 # Rodrigo Car Service Center Management System
 
 **Rodrigo Car Service Center** is a comprehensive Java-based desktop application built to manage daily operations in an automotive service center. It provides functionality for booking appointments, managing customers and vehicles, tracking services, generating invoices, and visualizing operational data using interactive charts and detailed reports.
@@ -59,7 +59,6 @@
 ### ⚙️ Setup
 
 1. **Clone the Repository**
-   ```bash
    git clone https://github.com/your-username/rodrigo-service-center.git
 ````
 

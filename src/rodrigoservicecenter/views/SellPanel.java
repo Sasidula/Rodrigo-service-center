@@ -36,6 +36,7 @@ public class SellPanel extends javax.swing.JInternalFrame {
         initComponents();
 
         payment.setVisible(false);
+        payment_lable.setVisible(false);
 
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0)); 
         BasicInternalFrameUI ui= (BasicInternalFrameUI) this.getUI(); 
@@ -65,7 +66,7 @@ public class SellPanel extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         Item_search = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        payment_lable = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         mobile_number = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -185,10 +186,10 @@ public class SellPanel extends javax.swing.JInternalFrame {
         jLabel8.setText("Mobile Number :");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 550, 170, 30));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("Payment   :");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 140, 30));
+        payment_lable.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        payment_lable.setForeground(new java.awt.Color(102, 102, 102));
+        payment_lable.setText("Payment   :");
+        getContentPane().add(payment_lable, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, 140, 30));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 102, 102));
@@ -228,7 +229,7 @@ public class SellPanel extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Item_searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Item_searchKeyPressed
+    private void Item_searchKeyPressed(java.awt.event.KeyEvent evt) {                                       
         String keyword = Item_search.getText();
         refreshTable(productController.productSearch(keyword,0));
     }
@@ -408,11 +409,11 @@ public class SellPanel extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField mobile_number;
     private javax.swing.JTextField payment;
+    private javax.swing.JLabel payment_lable;
     private javax.swing.JSpinner quantity;
     private javax.swing.JButton refresh_bt_1;
     private javax.swing.JButton selected_clear_bt;

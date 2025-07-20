@@ -24,6 +24,7 @@ public class InvoiceModel {
             int invoiceId = -1;
             if (rs.next()) {
                 invoiceId = rs.getInt(1);
+                invoice.setInvoiceId(invoiceId);
             }
 
             /*if(invoice.getProducts().isEmpty() && invoice.getServices().isEmpty()){

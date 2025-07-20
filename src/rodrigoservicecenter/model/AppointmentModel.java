@@ -19,23 +19,33 @@ public class AppointmentModel {
         connect db = new connect();
         Connection con = db.createConnection();
 
-        String sql = "INSERT INTO Appointment (appointmentId, customerId, vehicleId, outletId, status, serviceId, description, scheduledDate, scheduledTime) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+        String sql = "INSERT INTO Appointment (customerId, vehicleId, outletId, status, serviceId, description, scheduledDate, scheduledTime) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, appointment.getAppointmentId());
-            ps.setInt(2, appointment.getCustomer().getCustomerId());
-            ps.setInt(3, appointment.getVehicle().getVehicleId());
-            ps.setInt(4, appointment.getOutlet().getOutletId());
-            ps.setString(5, appointment.getStatus());
-            ps.setInt(6, appointment.getService().getServiceId());
-            ps.setString(7, appointment.getDescription());
-            ps.setDate(8, appointment.getScheduledDate());
-            ps.setTime(9, appointment.getScheduledTime());
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setInt(1, appointment.getCustomer().getCustomerId());
+            ps.setInt(2, appointment.getVehicle().getVehicleId());
+            ps.setInt(3, appointment.getOutlet().getOutletId());
+            ps.setString(4, appointment.getStatus());
+            ps.setInt(5, appointment.getService().getServiceId());
+            ps.setString(6, appointment.getDescription());
+            ps.setDate(7, appointment.getScheduledDate());
+            ps.setTime(8, appointment.getScheduledTime());
 
             int rows = ps.executeUpdate();
-            return rows > 0;
+
+            if (rows > 0) {
+                ResultSet rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    int generatedId = rs.getInt(1);
+                    appointment.setAppointmentId(generatedId);
+                }
+                return true;
+            } else {
+                return false;
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -48,6 +58,7 @@ public class AppointmentModel {
             }
         }
     }
+
 
 
     // Update an existing appointment

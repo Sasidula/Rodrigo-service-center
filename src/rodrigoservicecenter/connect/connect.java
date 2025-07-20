@@ -86,7 +86,7 @@ public class connect {
 
                 """
             CREATE TABLE IF NOT EXISTS appointment (
-              appointmentId INT NOT NULL,
+              appointmentId INT NOT NULL AUTO_INCREMENT,
               customerId INT,
               vehicleId VARCHAR(50),
               status VARCHAR(50),
@@ -96,8 +96,10 @@ public class connect {
               outletId INT,
               serviceId INT,
               PRIMARY KEY (appointmentId),
-              FOREIGN KEY (serviceId) REFERENCES service(serviceId)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+              FOREIGN KEY (serviceId) REFERENCES service(serviceId),
+              FOREIGN KEY (customerId) REFERENCES customers(customerId),
+              FOREIGN KEY (outletId) REFERENCES outlet(outletId)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;                                
             """,
 
                 """
