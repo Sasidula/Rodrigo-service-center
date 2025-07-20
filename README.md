@@ -82,13 +82,31 @@
 <details>
 <summary>Click to expand</summary>
 
+* Login
+![login](res/login.png)
 * Dashboard with Tabs
+![dashboard](res/dashboard.png)
 * Appointment Booking
-* Vehicle Management
+![booking](res/appointment.png)
+* Customer Management
+![customer](res/customer.png)
 * Visual Reports (bar, line, pie)
-* Printable Reports (Jasper)
+![graph](res/graphs.png)
+* Printable Reports (asper)
+![report](res/report.png)
 
 </details>
+
+---
+
+## 👥 Team Members
+
+| Name              | Student ID     |
+|-------------------|----------------|
+| N.A.S. Jayara     | CODSE23.1F-120 |
+| I.I.G. Perera     | CODSE23.1F-145 |
+| P.L.H. Indusara   | CODSE23.1F-055 |
+| L.A.D.G.N. Arjuna | CODSE23.1F-168 |
 
 ---
 
